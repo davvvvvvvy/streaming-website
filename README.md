@@ -69,9 +69,9 @@ let con = mysql.createConnection({
 
 ## Comming updates
 
-* [Login system upgrades],
-* [Implementation CDN API],
-* [Comming more soon]
+* Login system upgrades,
+* Implementation CDN API,
+* Comming more soon
 
 ## Contact me for help
 
