@@ -1,0 +1,49 @@
+{
+  "name": "streaming-website",
+  "version": "1.0.0",
+  "description": "Porn Streaminig Website",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "node dist/server.js",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "dependencies": {
+    "axios": "^0.18.1",
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.18.3",
+    "cheerio": "^1.0.0-rc.3",
+    "cors": "^2.8.5",
+    "dotenv": "^6.1.0",
+    "express": "^4.17.1",
+    "express-flash": "0.0.2",
+    "express-session": "^1.17.1",
+    "express-validator": "^6.6.1",
+    "handlebars": "^4.0.11",
+    "hbs": "^4.1.1",
+    "ip": "^1.1.5",
+    "lodash": "^4.17.10",
+    "method-override": "^2.3.10",
+    "mongodb": "^3.0.10",
+    "mongoose": "^5.1.4",
+    "multer": "^1.4.2",
+    "mysql": "^2.18.1",
+    "netlify-lambda": "^1.0.3",
+    "nodemailer": "^6.4.13",
+    "nodemon": "^2.0.4",
+    "plyr": "^3.6.2",
+    "pornhub-api": "0.0.1",
+    "serverless-http": "^1.8.0"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-node-externals": "^1.7.2"
+  }
+}

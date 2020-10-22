@@ -1,0 +1,29 @@
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<div class="container">
+    <div class="page-header">
+    <h1 class="for_h1"> Comments </h1>
+    </div>
+    <form method="POST" action="/commenting?userid={{user_id}}&postid={{id}}">
+        <div class="input-group">
+            <input class="form-control" placeholder="Add comment" name="comment_box">
+            <div class="input-group-append">
+                <input type="submit" class="btn btn-primary" value="Post">
+            </div>
+        </div>
+        <br>
+    </form>
+    <div id="dialog-window">
+        <div id="scrollable-content">
+            {{#each arrayOfComments}}
+                <div class="media">
+                    <div class="media-body">
+                        <h4 class="media-heading user_name" style="color: #f1f1f1;">{{this.users_id}}</h4>
+                        <p style="color: #f1f1f1;">{{this.comment}}</p>
+                        <br>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</div>

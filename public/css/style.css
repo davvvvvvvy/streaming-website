@@ -1,0 +1,244 @@
+body {
+    background: #121212;
+}
+.interier {
+    color: rgb(166, 166, 166);
+}
+.navbar {
+    background: #121212;
+}
+.card {
+    background-color: #121212;
+}
+p {
+    font-family: nexablack, sans-serif;
+}
+.for_h1 {
+    clear: both;
+    color: rgb(153, 51, 255);
+    font-family: nexablack, sans-serif;
+    font-size: 36px;
+    line-height: 1.2;
+    text-align: left;
+    background: -webkit-gradient(linear left to right, rgb(153, 51, 255) 0%, rgb(49, 145, 255) 100%) repeat scroll 0% 0% padding-box text;
+}
+@media (max-width: 400px) {
+    .btn.filter {
+        padding-left: 1.1rem;
+        padding-right: 1.1rem;
+    }
+}
+.search {
+    display: inline-block;
+    position: relative;
+    height: 35px;
+    width: 35px;
+    box-sizing: border-box;
+    margin: 0px 8px 7px 0px;
+    padding: 7px 9px 0px 9px;
+    border: 3px solid #ffffff;
+    border-radius: 25px;
+    -webkit-transition: all 200ms ease;
+    transition: all 200ms ease;
+    cursor: text;
+}
+.search:after {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 20px;
+    right: -5px;
+    top: 21px;
+    background: #ffffff;
+    border-radius: 3px;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -webkit-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+.search.active,
+.search:hover {
+    width: 300px;
+    margin-right: 0px;
+}
+.search.active:after,
+.search:hover:after {
+    height: 0px;
+}
+.search input {
+    width: 100%;
+    border: none;
+    box-sizing: border-box;
+    font-family: Helvetica;
+    font-size: 15px;
+    color: #f1f1f1;
+    background: transparent;
+    outline-width: 0px;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #121212;
+  background-color: #121212;
+  padding-top: 60px;
+}
+.modal-content {
+  background-color: #121212;
+  margin: 5% auto 15% auto;
+  width: 80%;
+}
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #FFF;
+  font-size: 35px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+.navbar-toggler{
+    height: 34px;
+    background-color: #007bff;
+    border:none;
+    position: relative;
+    color: #f1f1f1;
+}
+.navbar-toggler .line{
+    width: 100%;
+    float: left;
+    height: 2px;
+    background-color: #007bff;
+    margin-bottom: 5px;
+    position: relative;
+    color: #f1f1f1;
+}
+.video-js-responsive-container.vjs-hd {
+    padding-top: 56.25%;
+}
+.video-js-responsive-container.vjs-sd {
+    padding-top: 75%;
+}
+.video-js-responsive-container {
+    width: 100%;
+    position: relative;
+}
+.video-js-responsive-container .video-js {
+    height: 100% !important; 
+    width: 100% !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.navbar-laravel {
+    box-shadow: 0 2px 4px rgba(0,0,0,.04);
+}
+.navbar-brand , .nav-link, .my-form, .login-form {
+    font-family: Raleway, sans-serif;
+}
+.my-form{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+.my-form .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+.login-form {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+.login-form .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+#upvote { width: 0; height: 0;
+    border-color: orangered;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid orangered;
+}
+#upvote:after {
+    width: 5px;
+    height: 6px;
+    background-color: orangered;
+    content: '';
+    position:absolute;
+    margin-top: 8px;
+    margin-left: -3px;
+} 
+#downvote {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #CCCCFF;
+    margin-left: -1px;
+}
+#downvote:after {
+    width: 5px;
+    height: 6px;
+    background-color: #CCCCFF;
+    content: '';
+    position:absolute;
+    margin-left: -2px;
+    margin-top: -14px;
+}
+.user_name {
+    font-size:14px;
+    font-weight: bold;
+}
+.comments-list .media {
+    border-bottom: 1px dotted #ccc;
+}
+.pull-right {
+    float: right;
+}
+#dialog-window {
+  height: 200px;
+}
+#scrollable-content {
+  height: 180px;
+  overflow: auto;
+}
+#footer {
+  height: 20px;
+  background-color: green;
+}
+div::-webkit-scrollbar {
+  width: 12px;
+}
+div::-webkit-scrollbar-track {
+  background: #121212;
+}
+div::-webkit-scrollbar-thumb {
+  background-color: #f1f1f1;
+  border-radius: 20px;
+  border: 3px solid #353434;
+}

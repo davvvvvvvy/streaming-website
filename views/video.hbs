@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="content-language" content="en-us">
+        <title>{{title}}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="shortcut icon" href="/images/logo.ico" type="image/x-icon">
+        {{> _metadesc}}>
+        <link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet'>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        
+        <link href="https://unpkg.com/@videojs/themes@1/dist/city/index.css" rel="stylesheet">
+        <link href="https://unpkg.com/@videojs/themes@1/dist/fantasy/index.css" rel="stylesheet">
+        <link href="https://unpkg.com/@videojs/themes@1/dist/forest/index.css" rel="stylesheet">
+        <link href="https://unpkg.com/@videojs/themes@1/dist/sea/index.css" rel="stylesheet">
+        <link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet" />
+
+        <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+
+        {{> _generalcss}}
+    </head>
+    <body>
+        {{> _navbar}}
+        <div>
+            <div class="container">
+              {{> _top}}
+            <hr>
+            <div class="row">
+                <div class="col-md-8">
+                    
+                    <br>
+                    <h1 class="for_h1">{{title}}</h1>
+                    <div class="card">
+                      <div class="video-js-responsive-container vjs-hd">
+                      <video id="my-video" class="video-js" width="640" height="240" controls preload="auto" poster="{{thumb}}" data-setup="{}">
+                          <source src="{{url}}" type="video/mp4">
+                      </video>
+                      <br>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="container">
+                      <p style="color: darkgray; font-family: nexablack, sans-serif;">
+                          {{desc}}
+                      </p>
+                      <p>{{tags}}</p>
+                      <p userid="userid" hidden>{{user_id}}</p>
+                      <p postid="postid" hidden>{{id}}</p>
+                  {{> _comments}}
+
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="container">
+          <br>
+          <hr>
+          {{> _footer}}
+        </div>
+        <script>
+          $("#inpt_search").on('focus', function () {
+            $(this).parent('label').addClass('active');
+          });
+
+          $("#inpt_search").on('blur', function () {
+            if($(this).val().length == 0)
+              $(this).parent('label').removeClass('active');
+          });
+        </script>
+        <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    {{> _generalscripts}}
+    </body>
+</html>

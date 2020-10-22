@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-language" content="en-us">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="/images/logo.ico" type="image/x-icon">
+    {{> _metadesc}}
+    <link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet'>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    {{> _generalcss}}
+
+</head>
+
+<body>
+    {{> _navbar}}
+    <div class="container">
+        {{> _top}}
+        <hr>
+        <div class="row">
+            <div class="col-md-8">
+
+                <br>
+                <h1 class="for_h1">Trending now 📕</h1>
+                <br>
+                <hr>
+                {{#each arrayOfData}}
+                    <a href="/stories{{this.id}}"><h3 class="for_h1">{{this.title}}</h1></a>
+                    <br>
+                {{/each}}
+            </div>
+
+            <div class="col-md-4">
+                
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="container">
+        <br>
+        <hr>
+        <a href="{{prev}}"><button type="button" class="btn btn-primary">< prev</button></a>
+        <a href="{{next}}"><button type="button" class="btn btn-primary">next ></button></a>
+        <br>
+        <hr>
+        {{> _footer}}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+    {{> _generalscripts}}
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-language" content="en-us">
+    <title>Myaccount</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="/images/logo.ico" type="image/x-icon">
+    {{> _metadesc}}
+    <link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet'>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    {{> _generalcss}}
+
+</head>
+
+<body>
+    {{> _navbar}}
+    <div class="container">
+        <hr>
+        <br>
+
+        <h1 class="for_h1">Welcome 🥵! Your ID = {{user_id}}</h1>
+        <form method="GET", action="/logout">
+            <button class="btn btn-primary mb-2">Logout</button>
+        </form>
+        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;" class="btn btn-primary mb-2" class="fa fa-plus">Upload</button>
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <br>
+                {{#each arrayOfData}}
+                    <div class="card" style="width: 100%;">
+                        <a href="/video/{{this.video_id}}"><img class="card-img-top" src="{{this.video_thumb}}" alt="{{this.video_desc}}"></a>
+                        <br>
+                    </div>
+                    <br>
+                {{/each}}
+                <br>
+                <hr>
+
+            </div>
+            <div class="col-md-4">
+
+
+                <div id="id01" class="modal">
+
+                    
+                    <form class="modal-content animate" method="POST", action="/myaccount">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1" style="color: darkgray;">Select database</label>
+                            <select class="form-control" id="exampleFormControlSelect1" name="select_db">
+                                <option value="videos_data">videos_data</option>
+                                <option value="gifs_data">gifs_data</option>
+                                <option value="porn_stories">porn_stories</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="exampleFormControlTextarea2Div">
+                            <label for="exampleFormControlTextarea2" style="color: darkgray;">Title</label>
+                            <input class="form-control" id="exampleFormControlTextarea1" rows="1" name="title">
+                        </div>
+                        <div class="form-group" id="exampleFormControlTextarea3Div">
+                            <label for="exampleFormControlTextarea3" style="color: darkgray;">Description</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group" id="exampleFormControlTextarea4Div">
+                            <label for="exampleFormControlTextarea4" style="color: darkgray;">URL</label>
+                            <input class="form-control" id="exampleFormControlTextarea1" rows="1" name="url_inpt">
+                        </div>
+                        <div class="form-group" id="exampleFormControlTextarea5Div">
+                            <label for="exampleFormControlTextarea5" style="color: darkgray;">Thumb (URL)</label>
+                            <input class="form-control" id="exampleFormControlTextarea1" rows="1" name="thumb">
+                        </div>
+                        <div class="form-group" id="exampleFormControlTextarea6Div">
+                            <label for="exampleFormControlTextarea6" style="color: darkgray;">Tags</label>
+                            <input class="form-control" id="exampleFormControlTextarea1" rows="1" name="tags">
+                        </div>
+                        <input type="submit" class="btn btn-primary mb-2" value="Submity">
+                    </div>
+                    </form>
+
+                    <div>
+                        <p style="font-family: nexablack, sans-serif;">
+                            {{err}}
+                            {{respond}}
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <br>
+        <hr>
+        <a href="{{prev}}"><button type="button" class="btn btn-primary">< prev</button></a>
+        <a href="{{next}}"><button type="button" class="btn btn-primary">next ></button></a>
+        <br>
+        <hr>
+        {{> _footer}}
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+    <script>
+        $("#exampleFormControlSelect1").change(function() {
+            if ($(this).val() == "videos_data") {
+                $('#exampleFormControlTextarea2Div').show();
+                $('#exampleFormControlTextarea3Div').show();
+                $('#exampleFormControlTextarea4Div').show();
+                $('#exampleFormControlTextarea5Div').show();
+                $('#exampleFormControlTextarea6Div').show();
+            } else if ($(this).val() == "gifs_data") {
+                $('#exampleFormControlTextarea3Div').hide();
+                $('#exampleFormControlTextarea4Div').show();
+                $('#exampleFormControlTextarea5Div').hide();
+                $('#exampleFormControlTextarea6Div').hide();
+            } else {
+                $('#exampleFormControlTextarea3Div').show();
+                $('#exampleFormControlTextarea4Div').hide();
+                $('#exampleFormControlTextarea5Div').hide();
+                $('#exampleFormControlTextarea6Div').hide();
+            }
+        });
+        $("#exampleFormControlSelect1").trigger("change");
+    </script>
+    <script>
+    var modal = document.getElementById('id01');
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+    {{> _generalscripts}}
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-language" content="en-us">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="/images/logo.ico" type="image/x-icon">
+    {{> _metadesc}}
+    <link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet'>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    {{> _generalcss}}
+
+</head>
+
+<body>
+    {{> _navbar}}
+    <div class="container">
+        <hr>
+                <br>
+                <main class="login-form">
+                    <div class="cotainer">
+                        <div class="row justify-content-center">
+                                    <h1 class="for_h1">Login</h1>
+                                        <form action="/auth-login" method="POST">
+                                            <div class="form-group row">
+                                                <label for="email_address" class="col-md-4 col-form-label text-md-right"></label>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="email_address" class="form-control" name="emailLog" placeholder="Email" required autofocus>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label for="password" class="col-md-4 col-form-label text-md-right"></label>
+                                                <div class="col-md-6">
+                                                    <input type="password" id="password" class="form-control" name="passwordLog" placeholder="Password" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <div class="col-md-6 offset-md-4">
+                                                    <a href="/register">
+                                                        <p style="font-family: nexablack, sans-serif;">Don't have account? Make it here...</p>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-6 offset-md-4">
+                                                    <p style="color: darkseagreen; font-family: nexablack, sans-serif;">
+                                                        {{message}}
+                                                    </p>
+                                                    <p style="color: #121212">
+                                                        This is something I dont like.
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6 offset-md-4">
+                                                <button type="submit" class="btn btn-primary">
+                                                    Login
+                                                </button>
+                                            </div>
+                                    </form>
+                            </div>
+                        </div>
+
+                </main>
+                <br>
+                <hr>
+    </div>
+
+    <div class="container">
+        <br>
+        <hr>
+        {{> _footer}}
+    </div>
+    <script>
+        $("#inpt_search").on('focus', function () {
+            $(this).parent('label').addClass('active');
+        });
+
+        $("#inpt_search").on('blur', function () {
+            if ($(this).val().length == 0)
+                $(this).parent('label').removeClass('active');
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+    {{> _generalscripts}}
+</body>
+
+</html>
